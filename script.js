@@ -142,11 +142,25 @@ function renderZones(reviewMode) {
   const g = document.getElementById('clickable-zones');
   g.innerHTML = '';
   POINTS.forEach(p => {
-    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    circle.setAttribute('cx', p.cx); circle.setAttribute('cy', p.cy); circle.setAttribute('r', HIT_RADIUS);
-    circle.setAttribute('class', 'zone-hit'); circle.dataset.id = p.id;
-    if (reviewMode) circle.addEventListener('click', (e) => { e.stopPropagation(); openExplainCard(p, true, true); });
-    g.appendChild(circle);
+    const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    dot.setAttribute('cx', p.cx);
+    dot.setAttribute('cy', p.cy);
+    dot.setAttribute('r', 1.8);
+    dot.setAttribute('class', 'point-dot');
+    dot.dataset.id = p.id;
+
+    const hitArea = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    hitArea.setAttribute('cx', p.cx);
+    hitArea.setAttribute('cy', p.cy);
+    hitArea.setAttribute('r', HIT_RADIUS);
+    hitArea.setAttribute('class', 'zone-hit');
+    hitArea.dataset.id = p.id;
+
+    if (reviewMode) {
+      hitArea.addEventListener('click', (e) => { e.stopPropagation(); openExplainCard(p, true, true); });
+    }
+    g.appendChild(dot);
+    g.appendChild(hitArea);
   });
 }
 
