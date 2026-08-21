@@ -1,17 +1,17 @@
 const POINTS = [
-  {id:1, lieu:"Sous le nez", nom:"Infra-orbital", methode:"Touché pression", mecanisme:"Contrainte par la douleur", verbalisation:"Police, donne tes mains!", type:"submission", typeLabel:"Soumission / donner les mains", cx:50, cy:9},
-  {id:2, lieu:"Derrière lobe d'oreille", nom:"Angle mandibulaire", methode:"Touché pression", mecanisme:"Contrainte par la douleur", verbalisation:"Police, donne tes mains!", type:"submission", typeLabel:"Soumission / donner les mains", cx:56.5, cy:11},
-  {id:3, lieu:"En dessous de la mâchoire", nom:"Hypoglosse", methode:"Touché pression", mecanisme:"Contrainte par la douleur", verbalisation:"Police, donne tes mains!", type:"submission", typeLabel:"Soumission / donner les mains", cx:50, cy:14.5},
-  {id:4, lieu:"Centre du cou (corde de guitare)", nom:"Plexus brachial origine", methode:"Touché pression", mecanisme:"Contrainte par la douleur", verbalisation:"Police, donne tes mains!", type:"submission", typeLabel:"Soumission / donner les mains", cx:50, cy:18.5},
-  {id:5, lieu:"Creux des clavicules", nom:"Plexus brachial claviculaire", methode:"Pression dynamique", mecanisme:"Contrainte par la douleur", verbalisation:"Police, assieds-toi!", type:"asseoir", typeLabel:"Faire asseoir", cx:41, cy:24},
-  {id:6, lieu:"Clavicules / au-dessus du sternum", nom:"Nœud jugulaire", methode:"Pression dynamique", mecanisme:"Contrainte par la douleur", verbalisation:"Police, recule!", type:"distance", typeLabel:"Créer une distance / reculer", cx:50, cy:25},
-  {id:7, lieu:"Épaule / pectoral", nom:"Plexus brachial jonction", methode:"Frappe", mecanisme:"Dysfonction biomécanique", verbalisation:"Police, lâche ça!", type:"lacher", typeLabel:"Faire lâcher un objet", cx:32, cy:29},
-  {id:8, lieu:"Centre de l'avant-bras (intérieur)", nom:"Nerf médian", methode:"Frappe", mecanisme:"Dysfonction biomécanique", verbalisation:"Police, lâche ça!", type:"lacher", typeLabel:"Faire lâcher un objet", cx:17.5, cy:64},
-  {id:9, lieu:"Dessus de l'avant-bras (côté pouce)", nom:"Nerf radial", methode:"Touché pression", mecanisme:"Contrainte par la douleur", verbalisation:"Police, assieds-toi!", type:"asseoir", typeLabel:"Faire asseoir", cx:19, cy:60},
-  {id:10, lieu:"Dessous de l'avant-bras (côté petit doigt)", nom:"Nerf cubital", methode:"Touché pression", mecanisme:"Contrainte par la douleur", verbalisation:"Police, lève-toi!", type:"lever", typeLabel:"Faire lever", cx:16, cy:60},
-  {id:11, lieu:"Cuisse / bandelette / dessus du genou (externe)", nom:"Nerf sciatique externe poplité", methode:"Frappe", mecanisme:"Dysfonction biomécanique", verbalisation:"Diversion / distance / ralentir", type:"diversion", typeLabel:"Diversion / ralentir (jambes)", cx:36, cy:94},
-  {id:12, lieu:"Cuisse / intérieur / dessus du genou", nom:"Nerf fémoral", methode:"Frappe", mecanisme:"Dysfonction biomécanique", verbalisation:"Diversion / distance / ralentir", type:"diversion", typeLabel:"Diversion / ralentir (jambes)", cx:63, cy:94},
-  {id:13, lieu:"Mollet / centre des gastrocnémiens (arrière)", nom:"Nerf tibial", methode:"Pression dynamique / Frappe", mecanisme:"Contrainte par la douleur / Dysfonction biomécanique", verbalisation:"Police, donne tes mains!", type:"submission", typeLabel:"Soumission / donner les mains", cx:59, cy:108}
+  {id:1, lieu:"Sous le nez", nom:"Infra-orbital", methode:"Touché pression", mecanisme:"Contrainte par la douleur", verbalisation:"Police, donne tes mains!", type:"submission", typeLabel:"Soumission / donner les mains", left:49.5, top:7.0},
+  {id:2, lieu:"Derrière lobe d'oreille", nom:"Angle mandibulaire", methode:"Touché pression", mecanisme:"Contrainte par la douleur", verbalisation:"Police, donne tes mains!", type:"submission", typeLabel:"Soumission / donner les mains", left:55.5, top:8.3},
+  {id:3, lieu:"En dessous de la mâchoire", nom:"Hypoglosse", methode:"Touché pression", mecanisme:"Contrainte par la douleur", verbalisation:"Police, donne tes mains!", type:"submission", typeLabel:"Soumission / donner les mains", left:49.5, top:9.6},
+  {id:4, lieu:"Centre du cou (corde de guitare)", nom:"Plexus brachial origine", methode:"Touché pression", mecanisme:"Contrainte par la douleur", verbalisation:"Police, donne tes mains!", type:"submission", typeLabel:"Soumission / donner les mains", left:50, top:12.0},
+  {id:5, lieu:"Creux des clavicules", nom:"Plexus brachial claviculaire", methode:"Pression dynamique", mecanisme:"Contrainte par la douleur", verbalisation:"Police, assieds-toi!", type:"asseoir", typeLabel:"Faire asseoir", left:42.5, top:15.2},
+  {id:6, lieu:"Clavicules / au-dessus du sternum", nom:"Nœud jugulaire", methode:"Pression dynamique", mecanisme:"Contrainte par la douleur", verbalisation:"Police, recule!", type:"distance", typeLabel:"Créer une distance / reculer", left:50, top:14.8},
+  {id:7, lieu:"Épaule / pectoral", nom:"Plexus brachial jonction", methode:"Frappe", mecanisme:"Dysfonction biomécanique", verbalisation:"Police, lâche ça!", type:"lacher", typeLabel:"Faire lâcher un objet", left:34, top:18.2},
+  {id:8, lieu:"Centre de l'avant-bras (intérieur)", nom:"Nerf médian", methode:"Frappe", mecanisme:"Dysfonction biomécanique", verbalisation:"Police, lâche ça!", type:"lacher", typeLabel:"Faire lâcher un objet", left:21, top:40.5},
+  {id:9, lieu:"Dessus de l'avant-bras (côté pouce)", nom:"Nerf radial", methode:"Touché pression", mecanisme:"Contrainte par la douleur", verbalisation:"Police, assieds-toi!", type:"asseoir", typeLabel:"Faire asseoir", left:23.5, top:37.5},
+  {id:10, lieu:"Dessous de l'avant-bras (côté petit doigt)", nom:"Nerf cubital", methode:"Touché pression", mecanisme:"Contrainte par la douleur", verbalisation:"Police, lève-toi!", type:"lever", typeLabel:"Faire lever", left:19, top:37.5},
+  {id:11, lieu:"Cuisse / bandelette / dessus du genou (externe)", nom:"Nerf sciatique externe poplité", methode:"Frappe", mecanisme:"Dysfonction biomécanique", verbalisation:"Diversion / distance / ralentir", type:"diversion", typeLabel:"Diversion / ralentir (jambes)", left:41.5, top:63.5},
+  {id:12, lieu:"Cuisse / intérieur / dessus du genou", nom:"Nerf fémoral", methode:"Frappe", mecanisme:"Dysfonction biomécanique", verbalisation:"Diversion / distance / ralentir", type:"diversion", typeLabel:"Diversion / ralentir (jambes)", left:58.5, top:63.5},
+  {id:13, lieu:"Mollet / centre des gastrocnémiens (arrière)", nom:"Nerf tibial", methode:"Pression dynamique / Frappe", mecanisme:"Contrainte par la douleur / Dysfonction biomécanique", verbalisation:"Police, donne tes mains!", type:"submission", typeLabel:"Soumission / donner les mains", left:57, top:79}
 ];
 
 const CATEGORIES = {
@@ -22,8 +22,6 @@ const CATEGORIES = {
 const METHODE_OPTIONS = ["Touché pression", "Pression dynamique", "Frappe", "Pression dynamique / Frappe"];
 const MECANISME_OPTIONS = ["Contrainte par la douleur", "Dysfonction biomécanique", "Contrainte par la douleur / Dysfonction biomécanique"];
 const TYPE_OPTIONS = Object.values(CATEGORIES);
-
-const HIT_RADIUS = 5;
 
 let state = {
   mode: null, categoryFilter: null, queue: [], currentIndex: 0, current: null,
@@ -68,7 +66,7 @@ function startGame(mode, categoryFilter = null) {
 
   showScreen('screen-game'); resetZoom();
   document.getElementById('chrono-display').classList.toggle('hidden', mode !== 'chrono');
-  renderZones(mode === 'review');
+  renderPoints(mode === 'review');
 
   if (mode === 'chrono') { startChrono(); return; }
   if (mode === 'review') {
@@ -89,7 +87,7 @@ function nextQuestion() {
   document.getElementById('streak-value').textContent = state.streak;
   document.getElementById('counter-value').textContent = `${state.currentIndex + 1} / ${state.queue.length}`;
   document.getElementById('progress-bar').style.width = `${(state.currentIndex / state.queue.length) * 100}%`;
-  document.getElementById('reveal-marker').classList.add('hidden');
+  document.querySelectorAll('.point-target').forEach(el => el.classList.remove('hit-correct', 'hit-wrong'));
 }
 
 function finishGame() {
@@ -138,47 +136,79 @@ function formatTime(ms) {
   return `${String(min).padStart(2,'0')}:${String(sec).padStart(4,'0')}`;
 }
 
-function renderZones(reviewMode) {
-  const g = document.getElementById('clickable-zones');
-  g.innerHTML = '';
+// ============================================================
+// POINTS CLIQUABLES (positionnés en % par-dessus l'image)
+// ============================================================
+function renderPoints(reviewMode) {
+  const layer = document.getElementById('points-layer');
+  layer.innerHTML = '';
   POINTS.forEach(p => {
-    const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    dot.setAttribute('cx', p.cx);
-    dot.setAttribute('cy', p.cy);
-    dot.setAttribute('r', 1.8);
-    dot.setAttribute('class', 'point-dot');
+    const dot = document.createElement('div');
+    dot.className = 'point-target';
+    dot.style.left = p.left + '%';
+    dot.style.top = p.top + '%';
     dot.dataset.id = p.id;
-
-    const hitArea = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    hitArea.setAttribute('cx', p.cx);
-    hitArea.setAttribute('cy', p.cy);
-    hitArea.setAttribute('r', HIT_RADIUS);
-    hitArea.setAttribute('class', 'zone-hit');
-    hitArea.dataset.id = p.id;
-
-    if (reviewMode) {
-      hitArea.addEventListener('click', (e) => { e.stopPropagation(); openExplainCard(p, true, true); });
-    }
-    g.appendChild(dot);
-    g.appendChild(hitArea);
+    dot.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (reviewMode) { openExplainCard(p, true, true); return; }
+      if (!state.waitingAnswer) return;
+      state.waitingAnswer = false;
+      const isCorrect = p.id === state.current.id;
+      dot.classList.add(isCorrect ? 'hit-correct' : 'hit-wrong');
+      if (!isCorrect) {
+        const correctDot = layer.querySelector(`[data-id="${state.current.id}"]`);
+        if (correctDot) correctDot.classList.add('hit-correct');
+      }
+      processAnswer(isCorrect);
+    });
+    layer.appendChild(dot);
   });
 }
 
 // ============================================================
-// ZOOM / PAN sur le personnage
+// ZOOM / PAN AMELIORE (pinch, wheel, double-tap, pan libre, clamp)
 // ============================================================
 let zoomState = { scale: 1, x: 0, y: 0 };
 let pointers = new Map();
 let lastPinchDist = null;
+let pinchCenter = null;
 let panStart = null;
+let lastTapTime = 0;
 
-function applyTransform() {
-  document.getElementById('body-pan-layer').style.transform =
-    `translate(${zoomState.x}px, ${zoomState.y}px) scale(${zoomState.scale})`;
+function applyTransform(animated = false) {
+  const layer = document.getElementById('body-pan-layer');
+  layer.style.transition = animated ? 'transform 0.25s ease' : 'none';
+  layer.style.transform = `translate(${zoomState.x}px, ${zoomState.y}px) scale(${zoomState.scale})`;
 }
-function resetZoom() { zoomState = { scale: 1, x: 0, y: 0 }; applyTransform(); }
-function clampZoom() {
-  zoomState.scale = Math.min(Math.max(zoomState.scale, 1), 4);
+
+function clampPan() {
+  const wrap = document.getElementById('body-wrap');
+  const w = wrap.clientWidth, h = wrap.clientHeight;
+  const maxX = (zoomState.scale - 1) * w;
+  const maxY = (zoomState.scale - 1) * h;
+  zoomState.x = Math.min(0, Math.max(zoomState.x, -maxX));
+  zoomState.y = Math.min(0, Math.max(zoomState.y, -maxY));
+}
+
+function clampZoom() { zoomState.scale = Math.min(Math.max(zoomState.scale, 1), 5); }
+
+function resetZoom() { zoomState = { scale: 1, x: 0, y: 0 }; applyTransform(true); }
+
+function zoomBy(delta, cx, cy) {
+  const wrap = document.getElementById('body-wrap');
+  const rect = wrap.getBoundingClientRect();
+  const px = cx !== undefined ? cx - rect.left : rect.width / 2;
+  const py = cy !== undefined ? cy - rect.top : rect.height / 2;
+
+  const prevScale = zoomState.scale;
+  zoomState.scale += delta;
+  clampZoom();
+  const ratio = zoomState.scale / prevScale;
+
+  zoomState.x = px - (px - zoomState.x) * ratio;
+  zoomState.y = py - (py - zoomState.y) * ratio;
+  clampPan();
+  applyTransform();
 }
 
 function setupZoomPan() {
@@ -187,6 +217,7 @@ function setupZoomPan() {
   wrap.addEventListener('pointerdown', (e) => {
     wrap.setPointerCapture(e.pointerId);
     pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    document.getElementById('body-pan-layer').classList.add('dragging');
     if (pointers.size === 1) panStart = { x: e.clientX, y: e.clientY, ox: zoomState.x, oy: zoomState.y };
   });
 
@@ -197,16 +228,16 @@ function setupZoomPan() {
     if (pointers.size === 2) {
       const pts = Array.from(pointers.values());
       const dist = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+      const cx = (pts[0].x + pts[1].x) / 2, cy = (pts[0].y + pts[1].y) / 2;
       if (lastPinchDist != null) {
-        const delta = (dist - lastPinchDist) * 0.01;
-        zoomState.scale += delta;
-        clampZoom();
-        applyTransform();
+        const delta = (dist - lastPinchDist) * 0.012;
+        zoomBy(delta, cx, cy);
       }
       lastPinchDist = dist;
-    } else if (pointers.size === 1 && zoomState.scale > 1 && panStart) {
+    } else if (pointers.size === 1 && panStart) {
       zoomState.x = panStart.ox + (e.clientX - panStart.x);
       zoomState.y = panStart.oy + (e.clientY - panStart.y);
+      clampPan();
       applyTransform();
     }
   });
@@ -214,7 +245,7 @@ function setupZoomPan() {
   function endPointer(e) {
     pointers.delete(e.pointerId);
     if (pointers.size < 2) lastPinchDist = null;
-    if (pointers.size === 0) panStart = null;
+    if (pointers.size === 0) { panStart = null; document.getElementById('body-pan-layer').classList.remove('dragging'); }
   }
   wrap.addEventListener('pointerup', endPointer);
   wrap.addEventListener('pointercancel', endPointer);
@@ -222,44 +253,24 @@ function setupZoomPan() {
 
   wrap.addEventListener('wheel', (e) => {
     e.preventDefault();
-    zoomState.scale += e.deltaY * -0.001;
-    clampZoom();
-    applyTransform();
+    zoomBy(e.deltaY * -0.0018, e.clientX, e.clientY);
   }, { passive: false });
 
-  document.getElementById('zoom-in').addEventListener('click', () => { zoomState.scale += 0.4; clampZoom(); applyTransform(); });
-  document.getElementById('zoom-out').addEventListener('click', () => { zoomState.scale -= 0.4; clampZoom(); applyTransform(); });
+  wrap.addEventListener('dblclick', (e) => {
+    if (zoomState.scale > 1.3) resetZoom();
+    else zoomBy(1.5, e.clientX, e.clientY);
+  });
+
+  document.getElementById('zoom-in').addEventListener('click', () => zoomBy(0.5));
+  document.getElementById('zoom-out').addEventListener('click', () => zoomBy(-0.5));
   document.getElementById('zoom-reset').addEventListener('click', resetZoom);
 }
 
 // ============================================================
-// CLIC SUR LE CORPS (tient compte du zoom/pan)
+// FEEDBACK + CARTE EXPLICATION
 // ============================================================
-function setupSvgGlobalClick() {
-  const svg = document.getElementById('body-svg');
-  svg.addEventListener('click', (e) => {
-    if (state.mode === 'review') return;
-    if (!state.waitingAnswer) return;
-
-    const rect = svg.getBoundingClientRect();
-    const viewBox = svg.viewBox.baseVal;
-    const xRatio = (e.clientX - rect.left) / rect.width;
-    const yRatio = (e.clientY - rect.top) / rect.height;
-    const x = viewBox.x + xRatio * viewBox.width;
-    const y = viewBox.y + yRatio * viewBox.height;
-
-    let closest = null, minDist = Infinity;
-    POINTS.forEach(p => { const d = Math.hypot(p.cx - x, p.cy - y); if (d < minDist) { minDist = d; closest = p; } });
-
-    state.waitingAnswer = false;
-    const isCorrect = closest && closest.id === state.current.id && minDist <= HIT_RADIUS;
-    processAnswer(isCorrect);
-  });
-}
-
 function processAnswer(isCorrect) {
   const flash = document.getElementById('feedback-flash');
-  const marker = document.getElementById('reveal-marker');
 
   if (isCorrect) {
     state.score++; state.streak++;
@@ -268,26 +279,11 @@ function processAnswer(isCorrect) {
   } else {
     state.missed.push(state.current); state.streak = 0;
     flash.className = 'feedback-flash flash-bad'; playTone(220, 0.15);
-    positionRevealMarker(state.current); marker.classList.remove('hidden');
   }
   setTimeout(() => { flash.className = 'feedback-flash'; }, 250);
   openExplainCard(state.current, isCorrect, false);
 }
 
-function positionRevealMarker(point) {
-  const svg = document.getElementById('body-svg');
-  const rect = svg.getBoundingClientRect();
-  const viewBox = svg.viewBox.baseVal;
-  const marker = document.getElementById('reveal-marker');
-  const wrapRect = document.getElementById('body-wrap').getBoundingClientRect();
-  const x = rect.left - wrapRect.left + ((point.cx - viewBox.x) / viewBox.width) * rect.width;
-  const y = rect.top - wrapRect.top + ((point.cy - viewBox.y) / viewBox.height) * rect.height;
-  marker.style.left = `${x}px`; marker.style.top = `${y}px`;
-}
-
-// ============================================================
-// CARTE EXPLICATION + QUIZ A CHOIX MULTIPLES
-// ============================================================
 function buildOptions(pool, correctValue) {
   let opts = [...pool];
   if (!opts.includes(correctValue)) opts.push(correctValue);
@@ -416,6 +412,5 @@ if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => navigator.serviceWorker.register('service-worker.js').catch(() => {}));
 }
 
-setupSvgGlobalClick();
 setupZoomPan();
 renderHomeStats();
