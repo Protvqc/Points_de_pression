@@ -55,105 +55,16 @@
 
     <div class="zoom-controls">
       <button class="btn-zoom" id="zoom-out">−</button>
-      <span class="zoom-hint">Pince ou molette pour zoomer</span>
+      <span class="zoom-hint">Pince, molette ou double-tap</span>
       <button class="btn-zoom" id="zoom-in">+</button>
       <button class="btn-zoom" id="zoom-reset">⟲</button>
     </div>
 
     <div class="body-wrap" id="body-wrap">
       <div class="body-pan-layer" id="body-pan-layer">
-        <svg id="body-svg" viewBox="0 0 100 150" preserveAspectRatio="xMidYMid meet">
-          <defs>
-            <linearGradient id="skinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#dba876"/>
-              <stop offset="100%" stop-color="#b98456"/>
-            </linearGradient>
-            <linearGradient id="clothGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#3d5a80"/>
-              <stop offset="100%" stop-color="#26374f"/>
-            </linearGradient>
-            <linearGradient id="pantGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#2b3a52"/>
-              <stop offset="100%" stop-color="#1b2536"/>
-            </linearGradient>
-            <filter id="bodyShadow" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000" flood-opacity="0.4"/>
-            </filter>
-          </defs>
-
-          <g filter="url(#bodyShadow)">
-            <!-- Cheveux -->
-            <path d="M 42 5 C 42 2 46 0 50 0 C 54 0 58 2 58 5 C 58 6 57.5 6.5 57 7 L 57 9 L 43 9 L 43 7 C 42.5 6.5 42 6 42 5 Z" fill="#3a2b1f"/>
-            <!-- Tete -->
-            <ellipse cx="50" cy="10" rx="6.5" ry="8" fill="url(#skinGrad)" stroke="#8a6440" stroke-width="0.3"/>
-            <!-- Oreilles -->
-            <ellipse cx="43.5" cy="11" rx="1.2" ry="2" fill="url(#skinGrad)" stroke="#8a6440" stroke-width="0.2"/>
-            <ellipse cx="56.5" cy="11" rx="1.2" ry="2" fill="url(#skinGrad)" stroke="#8a6440" stroke-width="0.2"/>
-            <!-- Yeux -->
-            <ellipse cx="47" cy="9" rx="0.8" ry="0.5" fill="#2a2a2a"/>
-            <ellipse cx="53" cy="9" rx="0.8" ry="0.5" fill="#2a2a2a"/>
-            <!-- Bouche -->
-            <path d="M 47.5 13.5 Q 50 14.3 52.5 13.5" stroke="#7a5238" stroke-width="0.4" fill="none"/>
-            <!-- Cou -->
-            <rect x="46.5" y="16.5" width="7" height="5" rx="1.5" fill="url(#skinGrad)" stroke="#8a6440" stroke-width="0.2"/>
-
-            <!-- Torse (chemise) -->
-            <path d="M 39 21
-                     C 34 21.5 31 26 30.5 32
-                     L 29 47
-                     C 28.7 49.5 30 50.5 32 50.3
-                     L 35.5 50
-                     L 36.5 33
-                     C 37 27 39.5 22.5 50 22.5
-                     C 60.5 22.5 63 27 63.5 33
-                     L 64.5 50
-                     L 68 50.3
-                     C 70 50.5 71.3 49.5 71 47
-                     L 69.5 32
-                     C 69 26 66 21.5 61 21
-                     C 57 19.5 43 19.5 39 21 Z" fill="url(#clothGrad)" stroke="#1b2536" stroke-width="0.3"/>
-
-            <!-- Bras gauche (manche) -->
-            <path d="M 30.5 32 C 25 34.5 20.5 40.5 18.5 48.5 L 16 60
-                     C 21 40 18.5 48.5" fill="none"/>
-            <path d="M 30.5 32 C 24.5 34.5 19.5 41 17.5 49 L 15.5 58
-                     C 15 60 16.5 61.3 18.3 60.8 C 19.8 60.4 20.3 59 20.6 57.5
-                     L 23 48.5 C 24.5 43 27 38.5 32.5 35.5 Z" fill="url(#clothGrad)" stroke="#1b2536" stroke-width="0.3"/>
-            <!-- Avant-bras + main gauche (peau) -->
-            <path d="M 15.5 58 L 14 68 C 13.7 70.5 15.3 72 17.3 71.7 C 18.8 71.4 19.6 70 19.8 68.5 L 20.6 57.5 Z" fill="url(#skinGrad)" stroke="#8a6440" stroke-width="0.3"/>
-            <ellipse cx="16" cy="73" rx="3.3" ry="4" fill="url(#skinGrad)" stroke="#8a6440" stroke-width="0.3"/>
-
-            <!-- Bras droit (manche) -->
-            <path d="M 69.5 32 C 75.5 34.5 80.5 41 82.5 49 L 84.5 58
-                     C 85 60 83.5 61.3 81.7 60.8 C 80.2 60.4 79.7 59 79.4 57.5
-                     L 77 48.5 C 75.5 43 73 38.5 67.5 35.5 Z" fill="url(#clothGrad)" stroke="#1b2536" stroke-width="0.3"/>
-            <!-- Avant-bras + main droite -->
-            <path d="M 84.5 58 L 86 68 C 86.3 70.5 84.7 72 82.7 71.7 C 81.2 71.4 80.4 70 80.2 68.5 L 79.4 57.5 Z" fill="url(#skinGrad)" stroke="#8a6440" stroke-width="0.3"/>
-            <ellipse cx="84" cy="73" rx="3.3" ry="4" fill="url(#skinGrad)" stroke="#8a6440" stroke-width="0.3"/>
-
-            <!-- Ceinture / bassin -->
-            <path d="M 35.5 50 L 64.5 50 L 63.5 58 L 36.5 58 Z" fill="#1a1f2b" stroke="#0f131c" stroke-width="0.3"/>
-
-            <!-- Jambe gauche (pantalon) -->
-            <path d="M 36.5 58 C 34.5 68 34 82 34.5 96 L 35.5 116
-                     C 35.5 118.5 37.5 119.5 39.3 119 C 40.7 118.6 41.2 117.2 41.2 115.7
-                     L 42 96 C 42.5 82 43.3 68 45 58 Z" fill="url(#pantGrad)" stroke="#0f131c" stroke-width="0.3"/>
-            <!-- Jambe droite (pantalon) -->
-            <path d="M 63.5 58 C 65.5 68 66 82 65.5 96 L 64.5 116
-                     C 64.5 118.5 62.5 119.5 60.7 119 C 59.3 118.6 58.8 117.2 58.8 115.7
-                     L 58 96 C 57.5 82 56.7 68 55 58 Z" fill="url(#pantGrad)" stroke="#0f131c" stroke-width="0.3"/>
-
-            <!-- Chaussure gauche -->
-            <path d="M 34.5 118 L 40.5 118 C 42 118 43 119 42.8 120.3 C 42.6 121.5 41.3 122 39.8 122 L 33 122 C 32 122 31.5 121 32 120 Z" fill="#15181f" stroke="#000" stroke-width="0.2"/>
-            <!-- Chaussure droite -->
-            <path d="M 65.5 118 L 59.5 118 C 58 118 57 119 57.2 120.3 C 57.4 121.5 58.7 122 60.2 122 L 67 122 C 68 122 68.5 121 68 120 Z" fill="#15181f" stroke="#000" stroke-width="0.2"/>
-          </g>
-
-          <g id="clickable-zones"></g>
-        </svg>
+        <img src="body.png" alt="Corps humain" id="body-img" draggable="false">
+        <div id="points-layer"></div>
       </div>
-
-      <div id="reveal-marker" class="reveal-marker hidden"></div>
     </div>
 
     <div id="feedback-flash" class="feedback-flash"></div>
