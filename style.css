@@ -81,29 +81,55 @@ h2 { font-size: 1.3rem; text-align: center; margin-bottom: 16px; }
 .zoom-controls { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 8px; }
 .btn-zoom {
   background: var(--bg-card); border: 1px solid var(--border); color: var(--text);
-  width: 34px; height: 34px; border-radius: 10px; font-size: 1.1rem; cursor: pointer;
+  width: 36px; height: 36px; border-radius: 10px; font-size: 1.2rem; cursor: pointer; font-weight: 700;
 }
+.btn-zoom:active { background: var(--accent); }
 .zoom-hint { font-size: 0.72rem; color: var(--text-dim); }
 
 .body-wrap {
   position: relative; overflow: hidden; touch-action: none;
-  background: radial-gradient(circle at 50% 20%, rgba(99,102,241,0.08), transparent 60%), var(--bg-card);
-  border-radius: 18px; border: 1px solid var(--border); height: 62vh;
+  background: radial-gradient(circle at 50% 25%, rgba(99,102,241,0.10), transparent 65%), linear-gradient(180deg, #0e1420, #05070c);
+  border-radius: 20px; border: 1px solid var(--border); height: 66vh;
+  box-shadow: inset 0 0 60px rgba(0,0,0,0.5);
 }
-.body-pan-layer { width: 100%; height: 100%; transform-origin: 0 0; will-change: transform; }
-#body-svg { width: 100%; height: 100%; display: block; }
 
-.zone-hit { fill: transparent; stroke: none; cursor: pointer; }
-
-.reveal-marker {
-  position: absolute; width: 22px; height: 22px; border-radius: 50%;
-  border: 3px solid var(--error); transform: translate(-50%, -50%);
-  animation: pulse 0.9s ease-in-out infinite; pointer-events: none; box-shadow: 0 0 14px rgba(239,68,68,0.6);
+.body-pan-layer {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  transform-origin: 0 0; will-change: transform; cursor: grab;
 }
-@keyframes pulse {
-  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; }
-  70% { transform: translate(-50%, -50%) scale(1.9); opacity: 0.25; }
-  100% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; }
+.body-pan-layer.dragging { cursor: grabbing; }
+
+#body-img {
+  width: 100%; height: 100%; object-fit: contain; display: block;
+  filter: drop-shadow(0 6px 20px rgba(0,0,0,0.5));
+  user-select: none; -webkit-user-drag: none;
+}
+
+#points-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+
+.point-target {
+  position: absolute; transform: translate(-50%, -50%);
+  width: 26px; height: 26px; border-radius: 50%; pointer-events: auto; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.point-target::before {
+  content: ''; position: absolute; width: 100%; height: 100%; border-radius: 50%;
+  background: rgba(6, 182, 212, 0.25); border: 2px solid rgba(6, 182, 212, 0.9);
+  box-shadow: 0 0 10px rgba(6,182,212,0.6);
+  animation: dotPulse 1.8s ease-in-out infinite;
+}
+.point-target::after {
+  content: ''; position: absolute; width: 7px; height: 7px; border-radius: 50%;
+  background: #06b6d4; box-shadow: 0 0 6px #06b6d4;
+}
+.point-target.hit-correct::before { background: rgba(34,197,94,0.3); border-color: var(--success); box-shadow: 0 0 14px rgba(34,197,94,0.8); animation: none; }
+.point-target.hit-correct::after { background: var(--success); box-shadow: 0 0 8px var(--success); }
+.point-target.hit-wrong::before { background: rgba(239,68,68,0.3); border-color: var(--error); box-shadow: 0 0 14px rgba(239,68,68,0.8); animation: none; }
+.point-target.hit-wrong::after { background: var(--error); box-shadow: 0 0 8px var(--error); }
+
+@keyframes dotPulse {
+  0%, 100% { transform: scale(0.85); opacity: 0.6; }
+  50% { transform: scale(1.15); opacity: 1; }
 }
 
 .feedback-flash { position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 5; }
@@ -156,15 +182,4 @@ h2 { font-size: 1.3rem; text-align: center; margin-bottom: 16px; }
 @media (min-width: 500px) {
   .menu-buttons { flex-direction: row; flex-wrap: wrap; }
   .menu-buttons .btn { flex: 1 1 45%; justify-content: center; }
-}
-.point-dot {
-  fill: rgba(6, 182, 212, 0.85);
-  stroke: #ffffff;
-  stroke-width: 0.4;
-  pointer-events: none;
-  animation: dotPulse 1.6s ease-in-out infinite;
-}
-@keyframes dotPulse {
-  0%, 100% { opacity: 0.55; }
-  50% { opacity: 1; }
 }
